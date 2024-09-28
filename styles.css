@@ -45,13 +45,14 @@ video {
     }
 }
 
-/* Random positions and rotations */
-video:nth-child(1) { top: 10%; left: 5%; --rotation: 10deg; }
-video:nth-child(2) { top: 20%; left: 65%; --rotation: -15deg; }
-video:nth-child(3) { top: 50%; left: 10%; --rotation: 5deg; }
-video:nth-child(4) { top: 60%; left: 40%; --rotation: -5deg; }
-video:nth-child(5) { top: 75%; left: 75%; --rotation: 8deg; }
-video:nth-child(6) { top: 80%; left: 20%; --rotation: -10deg; }
+/* Random positions and rotations with more spacing */
+video:nth-child(1) { top: 5%; left: 5%; --rotation: 10deg; }
+video:nth-child(2) { top: 20%; left: 60%; --rotation: -15deg; }
+video:nth-child(3) { top: 45%; left: 10%; --rotation: 5deg; }
+video:nth-child(4) { top: 55%; left: 50%; --rotation: -5deg; }
+video:nth-child(5) { top: 70%; left: 65%; --rotation: 8deg; }
+video:nth-child(6) { top: 85%; left: 20%; --rotation: -10deg; }
+
 
 /* Dark overlay to prank */
 body::before {
