@@ -53,6 +53,17 @@ video:nth-child(4) { top: 60%; left: 40%; --rotation: -5deg; }
 video:nth-child(5) { top: 75%; left: 75%; --rotation: 8deg; }
 video:nth-child(6) { top: 80%; left: 20%; --rotation: -10deg; }
 
+/* Dark overlay to prank */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Darken background */
+    z-index: -1;
+}
 
 /* Warning message styling */
 .warning-message {
