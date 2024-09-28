@@ -51,7 +51,7 @@ function showWarningMessage(event) {
 // Apply the gradual volume increase to only two randomly selected videos
 window.onload = function() {
     const videos = document.querySelectorAll('video'); // Select all video elements
-    const randomVideos = getRandomVideos(videos, 2); // Randomly select 2 videos
+    const randomVideos = getRandomVideos(videos, 1); // Randomly select 1 videos
 
     // Ensure all videos play automatically and are muted initially
     videos.forEach(video => {
