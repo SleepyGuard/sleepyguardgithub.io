@@ -64,17 +64,17 @@
             const videos = document.querySelectorAll('video'); // Select all video elements
             const randomVideos = getRandomVideos(videos, 2); // Randomly select 2 videos
 
-            // Unmute only the two randomly selected videos
+            // Ensure all videos play automatically and are muted initially
+            videos.forEach(video => {
+                video.play(); // Autoplay all videos
+                video.addEventListener('click', showWarningMessage); // Show warning on left-click
+                video.addEventListener('ended', allowClose); // Allow closing the page after video ends
+            });
+
+            // Unmute only the two randomly selected videos and increase volume gradually
             randomVideos.forEach(video => {
                 video.muted = false; // Unmute the randomly selected videos
                 increaseVolume(video); // Gradually increase the volume
-            });
-
-            // Ensure all videos play automatically and prevent pausing
-            videos.forEach(video => {
-                video.play(); // Autoplay all videos
-                video.addEventListener('ended', allowClose); // Allow closing the page after video ends
-                video.addEventListener('click', showWarningMessage); // Show warning on left-click
             });
         };
     </script>
@@ -82,33 +82,33 @@
 <body>
     <h1>Watch the video!</h1>
 
-    <!-- Video elements (you can add or remove as needed) -->
-    <video width="25%" autoplay muted>
+    <!-- Video elements -->
+    <video width="25%" autoplay muted playsinline>
         <source src="1 minute of high quality rick roll.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
 
-    <video width="25%" autoplay muted>
+    <video width="25%" autoplay muted playsinline>
         <source src="1 minute of high quality rick roll.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
 
-    <video width="25%" autoplay muted>
+    <video width="25%" autoplay muted playsinline>
         <source src="1 minute of high quality rick roll.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
 
-    <video width="25%" autoplay muted>
+    <video width="25%" autoplay muted playsinline>
         <source src="1 minute of high quality rick roll.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
 
-    <video width="25%" autoplay muted>
+    <video width="25%" autoplay muted playsinline>
         <source src="1 minute of high quality rick roll.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
 
-    <video width="25%" autoplay muted>
+    <video width="25%" autoplay muted playsinline>
         <source src="1 minute of high quality rick roll.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
