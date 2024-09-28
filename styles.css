@@ -1,0 +1,106 @@
+/* Ensure the body and html cover the full height of the viewport */
+html, body {
+    height: 100%; /* Make sure the body and html cover the full height */
+    margin: 0;
+    padding: 0;
+}
+
+/* Set the background image for the entire page */
+body {
+    background-image: url('Rick-Astley-1600x1069-1555789997.jpg'); /* Replace with your actual image */
+    background-size: cover;  /* Ensure the image covers the entire background */
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: Arial, sans-serif; /* Set a clean font */
+    color: white; /* Text color */
+    position: relative; /* To position videos within the body */
+    overflow: hidden; /* Prevent videos from going outside the body bounds */
+}
+
+/* Style the heading */
+h1 {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 3em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Make the text stand out on the background */
+}
+
+/* Randomized positions for the video elements */
+video {
+    position: absolute; /* Position absolutely within the body */
+    width: 25%; /* Set a consistent size for all videos */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5); /* Add some shadow to the video for effect */
+    border-radius: 10px; /* Rounded corners */
+    transform: rotate(calc(var(--rotation))); /* Random rotation */
+}
+
+/* Assign random positions and rotations to videos */
+video:nth-child(1) {
+    top: 10%;
+    left: 5%;
+    --rotation: 10deg;
+}
+
+video:nth-child(2) {
+    top: 20%;
+    left: 65%;
+    --rotation: -15deg;
+}
+
+video:nth-child(3) {
+    top: 50%;
+    left: 10%;
+    --rotation: 5deg;
+}
+
+video:nth-child(4) {
+    top: 60%;
+    left: 40%;
+    --rotation: -5deg;
+}
+
+video:nth-child(5) {
+    top: 75%;
+    left: 75%;
+    --rotation: 8deg;
+}
+
+video:nth-child(6) {
+    top: 80%;
+    left: 20%;
+    --rotation: -10deg;
+}
+
+/* Optional: Styling the page for a prank feel */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Slight overlay to darken the background */
+    z-index: -1; /* Keep the overlay behind everything else */
+}
+
+/* Styling for the warning message */
+.warning-message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 0, 0, 0.8);
+    color: white;
+    padding: 20px;
+    font-size: 2em;
+    border-radius: 10px;
+    text-align: center;
+    z-index: 1000;
+    animation: fadeOut 2s ease-in-out;
+}
+
+/* Fade-out animation for the warning message */
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
