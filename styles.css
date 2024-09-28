@@ -1,20 +1,20 @@
 /* Ensure the body and html cover the full height of the viewport */
 html, body {
-    height: 100%; /* Make sure the body and html cover the full height */
+    height: 100%; /* Full height */
     margin: 0;
     padding: 0;
 }
 
-/* Set the background image for the entire page */
+/* Set the background image */
 body {
-    background-image: url('Rick-Astley-1600x1069-1555789997.jpg'); /* Replace with your actual image */
-    background-size: cover;  /* Ensure the image covers the entire background */
+    background-image: url('Rick-Astley-1600x1069-1555789997.jpg');
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    font-family: Arial, sans-serif; /* Set a clean font */
-    color: white; /* Text color */
-    position: relative; /* To position videos within the body */
-    overflow: hidden; /* Prevent videos from going outside the body bounds */
+    font-family: Arial, sans-serif;
+    color: white;
+    position: relative;
+    overflow: hidden; /* Keep videos within bounds */
 }
 
 /* Style the heading */
@@ -22,56 +22,38 @@ h1 {
     text-align: center;
     margin-top: 50px;
     font-size: 3em;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Make the text stand out on the background */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
-/* Randomized positions for the video elements */
+/* Video styling */
 video {
-    position: absolute; /* Position absolutely within the body */
-    width: 25%; /* Set a consistent size for all videos */
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5); /* Add some shadow to the video for effect */
-    border-radius: 10px; /* Rounded corners */
-    transform: rotate(calc(var(--rotation))); /* Random rotation */
+    position: absolute;
+    width: 25%;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    transform: rotate(calc(var(--rotation)));
 }
 
-/* Assign random positions and rotations to videos */
-video:nth-child(1) {
-    top: 10%;
-    left: 5%;
-    --rotation: 10deg;
+/* Media queries for mobile responsiveness */
+@media (max-width: 768px) {
+    video {
+        width: 45%; /* Larger size on mobile for visibility */
+    }
+
+    h1 {
+        font-size: 2em; /* Adjust heading size */
+    }
 }
 
-video:nth-child(2) {
-    top: 20%;
-    left: 65%;
-    --rotation: -15deg;
-}
+/* Random positions and rotations */
+video:nth-child(1) { top: 10%; left: 5%; --rotation: 10deg; }
+video:nth-child(2) { top: 20%; left: 65%; --rotation: -15deg; }
+video:nth-child(3) { top: 50%; left: 10%; --rotation: 5deg; }
+video:nth-child(4) { top: 60%; left: 40%; --rotation: -5deg; }
+video:nth-child(5) { top: 75%; left: 75%; --rotation: 8deg; }
+video:nth-child(6) { top: 80%; left: 20%; --rotation: -10deg; }
 
-video:nth-child(3) {
-    top: 50%;
-    left: 10%;
-    --rotation: 5deg;
-}
-
-video:nth-child(4) {
-    top: 60%;
-    left: 40%;
-    --rotation: -5deg;
-}
-
-video:nth-child(5) {
-    top: 75%;
-    left: 75%;
-    --rotation: 8deg;
-}
-
-video:nth-child(6) {
-    top: 80%;
-    left: 20%;
-    --rotation: -10deg;
-}
-
-/* Optional: Styling the page for a prank feel */
+/* Dark overlay to prank */
 body::before {
     content: "";
     position: fixed;
@@ -79,11 +61,11 @@ body::before {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.5); /* Slight overlay to darken the background */
-    z-index: -1; /* Keep the overlay behind everything else */
+    background: rgba(0, 0, 0, 0.5); /* Darken background */
+    z-index: -1;
 }
 
-/* Styling for the warning message */
+/* Warning message styling */
 .warning-message {
     position: fixed;
     top: 50%;
@@ -99,7 +81,6 @@ body::before {
     animation: fadeOut 2s ease-in-out;
 }
 
-/* Fade-out animation for the warning message */
 @keyframes fadeOut {
     from { opacity: 1; }
     to { opacity: 0; }
