@@ -48,18 +48,6 @@ function showWarningMessage(event) {
     }, 2000);
 }
 
-// Function to simulate a user click or touch event to bypass autoplay restrictions on mobile
-function simulateUserInteraction() {
-    const event = new MouseEvent('click', {
-        view: window,
-        bubbles: true,
-        cancelable: true
-    });
-    
-    // Dispatch the simulated event on the document to emulate user interaction
-    document.dispatchEvent(event);
-}
-
 // Apply the gradual volume increase to only two randomly selected videos
 window.onload = function() {
     const videos = document.querySelectorAll('video'); // Select all video elements
@@ -72,14 +60,11 @@ window.onload = function() {
         video.addEventListener('ended', allowClose); // Allow closing the page after video ends
     });
 
-    // Simulate a user interaction to bypass autoplay restrictions
-    simulateUserInteraction();
-
     // Unmute only the two randomly selected videos and increase volume gradually after a slight delay
     setTimeout(() => {
         randomVideos.forEach(video => {
             video.muted = false; // Unmute the randomly selected videos
             increaseVolume(video); // Gradually increase the volume
         });
-    }, 1000); // Adjust the delay if necessary (1 second here)
+    }, 3000); // Adjust the delay if necessary (3 seconds here)
 };
