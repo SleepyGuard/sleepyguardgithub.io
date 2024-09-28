@@ -55,7 +55,7 @@ video:nth-child(6) { top: 80%; left: 20%; --rotation: -10deg; }
 
 /* Dark overlay to prank */
 body::before {
-    /*content: "";*/
+    content: "";
     position: fixed;
     top: 0;
     left: 0;
